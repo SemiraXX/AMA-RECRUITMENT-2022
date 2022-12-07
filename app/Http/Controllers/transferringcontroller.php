@@ -260,7 +260,7 @@ class transferringcontroller extends Controller
                 'EmpTitle_Designate' => null,
                 'EmpPositionCode_Designate' => $fromMRF->JDCode,
                 'EmpRankCode_Designate' => $request->input('EmpRankCode'),
-               /* 'DesignateStartDate' => $fromMRF->date_needed,
+                'DesignateStartDate' => $fromMRF->date_needed,
                 'DesignateEndDate'=> NOw(),
                 'PayrollTag'=> 0,
                 'PaySchedCode'=> 'null',
