@@ -1,0 +1,196 @@
+
+body{
+    font-family: 'Lato', sans-serif !important;
+}.logo1{
+    width:150px;
+    margin: 10px;
+}.application-logo{
+    width: 80%;
+    margin: auto;
+}.job-logo{
+    width: 100px;
+}.consent-note{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+}.password-notes{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    color: #179FD6;
+}
+
+
+/*JOB WRAPPER*/
+.jobwrapper{
+    margin:auto;
+    width: 90%;
+    background-color: transparent;
+    padding-top: 170px;
+    padding-left: 70px;
+    padding-right: 70px;
+    padding-bottom: 50px;
+}.singlejobthumbnail{
+    background-color: white;
+    padding-top: 130px;
+    padding-left: 40px;
+    padding-right: 20px;
+    width: 90%;
+    margin-bottom: 10px;
+    border-radius:10px;
+    box-shadow: 0px 4px 17px -2px rgba(0,0,0,0.07);
+    overflow-y: scroll;
+    overflow-x: hidden;
+    max-height: 80vh;
+}.job-details-wrapper{
+    padding-left:10px;
+    padding-top: 10px;
+}.singlejobthumbnail::-webkit-scrollbar {
+    width: 8px;
+    border-radius:20px;
+}.singlejobthumbnail::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+    border-radius:20px;
+}.singlejobthumbnail::-webkit-scrollbar-thumb {
+    background: #9A0000;
+    opacity:0.5;
+    border-radius:20px;
+}.singlejobthumbnail::-webkit-scrollbar-thumb:hover {
+    opacity:1;
+}.jobinfowrapper{
+    position: fixed;
+    width: 100%;
+    right: 0px;
+    background-color: transparent;
+}.main-job-set{
+    margin-top:0px;
+}.insidejobtitle{
+    position: absolute;
+    background-color: white;
+    width:88%;
+    padding: 20px;
+    box-shadow: 0px 4px 17px -2px rgba(0,0,0,0.07);
+}.searchbarwrapper{
+    position: fixed;
+    width: 100%;
+    top: 60px;
+    z-index: 10;
+    background-color: #FBFBFB;
+    padding: 30px;
+    margin: auto !important;
+    text-align: center;
+}.searchinput{
+    width: 500px;
+    height: 40px;
+    border: solid 1px #D2D2D2;
+    padding: 10px;
+    font-family: 'Montserrat', sans-serif;
+    background-color: transparent;
+    font-size: 14px;
+    border-radius: 10px;
+}.searchinput:focus{
+    outline: none;
+}.searchbtn{
+    width: 120px;
+    background-color: #9A0000;
+    height: 40px;
+    border: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    border-radius: 10px;
+    color: white;
+}.jobthumbnail{
+    background-color: white;
+    padding: 20px;
+    width: 97%;
+    margin-bottom: 10px;
+    border-radius:10px;
+    box-shadow: 0px 4px 17px -2px rgba(0,0,0,0.07);
+}.main-job-title{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: bolder;
+    line-height:normal;
+    color: #424242;
+}.main-job-label{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    line-height:7px;
+}.label-job-title{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: bolder;
+    padding-top: 12px;
+    line-height:16px;
+    color: #9A0000;
+}.label-job-title1{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: bolder;
+    line-height:0px;
+    color: #424242;
+}.job-summary-label{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+}.job-label1{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: bolder;
+    padding-top:20px;
+    color: #424242;
+}.job-label2{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    line-height: normal;
+}.job-label3{
+    color: #424242;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+}.jobshortdetails{
+    justify-content: space-between;
+}.searchsuggestion{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    background-color: #E2E2E2;
+    padding: 7px;
+    border-radius:10px;
+    margin-right:5px;
+}
+
+
+
+/*FOR JOB SPECIFIC JD*/
+.apply-btn{
+    background-color: #FFB901;
+    border: none;
+    height: 30px;
+    width: 100px;
+    border-radius: 10PX;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    color: black;
+    transition: 1s;
+}.save-app-btn{
+    background-color: #ECECEC;
+    border: none;
+    margin-left:5px !important;
+    height: 30px;
+    width: auto;
+    border-radius: 10PX;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    color: black;
+    transition: 1s;
+}.view-job-btn{
+    background-color: #9A0000;
+    border: none;
+    height: 30px;
+    width: 100px;
+    border-radius: 10PX;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    color: white;
+    transition: 1s;
+    float: right;
+}.view-job-btn:hover{
+    background-color: #414141;
+}

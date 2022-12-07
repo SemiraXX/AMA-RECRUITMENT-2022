@@ -1,0 +1,51 @@
+
+
+.form-wrapper-for-e201{
+    padding: 50px;
+    background-color: white;
+    width: 80%;
+}
+
+input:focus{
+   outline: none;
+}
+.e201-input{
+    width: 100%;
+    background-color: transparent;
+    height: 40px;
+    font-size: 20px;
+    border: none;
+    border-bottom: solid #B2B2B2 1px;
+}
+.not-allowed-e201-input{
+    width: 100%;
+    background-color: transparent;
+    height: 40px;
+    font-size: 20px;
+    border: none;
+    pointer-events: none;
+    border-bottom: solid #FFABAB 2px;
+    cursor: not-allowed;
+}
+
+.e201-form-label{
+    font-size: 12px !important;
+    font-family: 'Montserrat', sans-serif;
+}
+.tab-title-text{
+    font-size: 20px !important;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+.trasfer-btn{
+    width: 200px;
+    height:40px;
+    background-color: #00E498;
+    font-family: 'Montserrat', sans-serif;
+    box-shadow: 0px 4px 17px -2px rgba(0,0,0,0.20);
+    border: none;
+    font-size: 14px;
+    color: azure;
+    float: right;
+}

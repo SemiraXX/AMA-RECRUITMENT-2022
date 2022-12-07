@@ -1,0 +1,80 @@
+  
+  
+  #myProgress {
+    width: 100%;
+    background-color: #ddd;
+  }
+  
+
+  /*100%*/
+  #progbar100 {
+    animation: load100 2s normal forwards;
+    height: 30px;
+    width: 0;
+    background-color: #49ABDF;
+  }
+
+  @keyframes load100 {
+    0% { width: 0; }
+    100% { width: 100%; }
+  }
+
+
+  /*80%*/
+  #progbar80 {
+    animation: load80 2s normal forwards;
+    height: 30px;
+    width: 0;
+    background-color: #49ABDF;
+  }
+
+  @keyframes load80 {
+    0% { width: 0; }
+    100% { width: 80%; }
+  }
+
+
+  /*60%*/
+  #progbar60 {
+    animation: load60 2s normal forwards;
+    height: 30px;
+    width: 0;
+    background-color: #49ABDF;
+  }
+
+  @keyframes load60 {
+    0% { width: 0; }
+    100% { width: 60%; }
+  }
+
+
+  /*40%*/
+  #progbar40 {
+    animation: load40 2s normal forwards;
+    height: 30px;
+    width: 0;
+    background-color: #49ABDF;
+  }
+
+  @keyframes load40 {
+    0% { width: 0; }
+    100% { width: 40%; }
+  }
+
+
+  
+
+
+  #progbar0 {
+    animation: load0 2s normal forwards;
+    height: 30px;
+    width: 0;
+    background-color: #DADF49;
+  }
+
+  @keyframes load0 {
+    0% { width: 0; }
+    100% { width: 0%; }
+  }
+
+  

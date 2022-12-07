@@ -1,0 +1,192 @@
+
+/*JOB DETAILS*/
+.view-main-wrapper{
+    margin:auto;
+    width: 85%;
+    background-color: transparent;
+    padding-top: 100px;
+}.whitejobwrapper{
+    background-color: white;
+    box-shadow: 0px 4px 17px -2px rgba(0,0,0,0.10);
+    padding: 50px;
+    width: 100%;
+    margin: auto;
+}.whitejobtitlewrapper{
+    background-color: white;
+    box-shadow: 0px 4px 17px -2px rgba(0,0,0,0.10);
+    padding: 20px;
+    width: 100%;
+    margin: auto;
+}.view-application-job-title{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    line-height: normal;
+    color: #9A0000;
+    text-align: left;
+}
+.transparentjobwrapper{
+    background-color: transparent;
+    padding: 50px;
+    width: 100%;
+    margin: auto;
+}
+
+
+
+
+.progress-step-title{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    line-height: normal;
+    color: #5A9FDC ;
+    font-weight: bold;
+}.take-exam-btn{
+    height: 40px;
+    width: 180px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    background-color:#5A9FDC ;
+    color:white;
+    border: none;
+    margin-top: 10px;
+}.note-exam-btn{
+    height: 40px;
+    width: 150px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    background-color:#FB6972;
+    border: none;
+    color:white;
+    margin: 5px;
+}.submit-exam-btn{
+    height: 40px;
+    width: 150px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    background-color:#00E498;
+    border: none;
+    color:white;
+    margin: 5px;
+    float: right;
+}.upload-req-btn{
+    height: 40px;
+    width: 180px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    background-color:#00E498 ;
+    color:white;
+    border: none;
+    margin-top: 10px;
+}.exam-content-wrapper{
+    width:90%;
+    margin: auto;
+}.exam-wrapper{
+    border: solid 1px #BBBBBB;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin: 15px;
+}.answergroup{
+    justify-content: space-between;
+}.exam-question{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: bolder;
+    color: #9A0000;
+}.exam-choices{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    margin-left: 10px;
+    text-transform: uppercase !important;
+}.exam-instruction{
+    padding-top: 40px;
+    padding-left: 60px;
+    padding-right: 60px;
+    padding-bottom: 50px;
+    background-color: white;
+    margin: auto;
+    text-align: center;
+}.exam-note-title{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 25px;
+    font-weight: bolder;
+    color: #FB6972;
+    text-align: center;
+}.note-label{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+}
+
+
+
+
+/*FOR UPLOAD REQUIREMENTS MODAL*/
+.requirments-instruction{
+    padding-top: 40px;
+    padding-left: 60px;
+    padding-right: 60px;
+    padding-bottom: 50px;
+    background-color: white;
+    margin: auto;
+    text-align: center;
+}.requirments-note-title{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 25px;
+    font-weight: bolder;
+    color: #00E498;
+    text-align: center;
+}.requirments-note-text{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    text-align: left;
+}.table{
+    text-align: left;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+}.upload-btn{
+    height: 35px;
+    width: 100px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    background-color:#00E498;
+    border: none;
+    color:white;
+    margin: 5px;
+    float: right;
+}.fileuploadinput{
+    height: 35px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    float: right;
+    text-align: right;
+}
+
+
+
+.modal-info-tab-btn{
+    height: 45px;
+    width: 150px;
+    background-color: #B80000;
+    border-bottom: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    color: white;
+    border-top: solid 1px #B80000;
+    border-left: solid 1px #B80000;
+    border-right: solid 1px #B80000;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 280px;
+}.modal-info-tab-btn:hover{
+    background-color: #9C4A4A;
+}.modal-tab-btn-active{
+    background-color: #CACACA;
+    border-top: solid 1px #CACACA;
+    border-left: solid 1px #CACACA;
+    border-right: solid 1px #CACACA;
+    box-shadow: 0px 4px 17px -2px rgba(0,0,0,0.20) !important;
+}
+
+
+
+

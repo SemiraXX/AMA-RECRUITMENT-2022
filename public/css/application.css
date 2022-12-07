@@ -1,0 +1,221 @@
+
+/*APPLICATIONS WRAPPER*/
+.applicationswrapper{
+    margin:auto;
+    width: 90%;
+    background-color: transparent;
+    padding-top: 100px;
+    padding-left: 70px;
+    padding-right: 70px;
+    padding-bottom: 50px;
+}.createapplicationswrapper{
+    margin:auto;
+    width: 900px;
+    background-color: transparent;
+    padding-top: 100px;
+    padding-left: 70px;
+    padding-right: 70px;
+    padding-bottom: 50px;
+}.list-applicationswrapper2{
+    padding: 30px;
+}.applicationswrapper2{
+    padding: 30px;
+    box-shadow: 0px 4px 17px -2px rgba(0,0,0,0.07);
+}.submittedapplicationswrapper{
+    background-color: white;
+    padding: 20px;
+    margin-bottom:10px;
+    box-shadow: 0px 4px 17px -2px rgba(0,0,0,0.07);
+}.form-application-detail{
+    padding: 20px;
+}.application-form-wrapper2{
+    background-color: white;
+    padding: 30px;
+    margin-top: 10px;
+    box-shadow: 0px 4px 17px -2px rgba(0,0,0,0.10);
+}.application-form-wrapper3{
+    background-color: white;
+    padding: 10px;
+    margin-bottom: 2px;
+    margin-top: 10px;
+    text-align: center !important;
+    margin-top: 30px;
+}.applicantrowwrapper{
+    background-color: transparent;
+    border: solid 1px #DADADA;
+    padding:15px;
+}
+
+
+.take-exam-btn{
+    height: 40px;
+    width: 180px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    background-color:#5A9FDC ;
+    color:white;
+    border: none;
+    margin-top: 10px;
+}/*FOR UPLOAD REQUIREMENTS MODAL*/
+.requirments-instruction{
+    padding-top: 40px;
+    padding-left: 60px;
+    padding-right: 60px;
+    padding-bottom: 50px;
+    background-color: white;
+    margin: auto;
+    text-align: center;
+}.requirments-note-title{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 25px;
+    font-weight: bolder;
+    color: #00E498;
+    text-align: center;
+}.requirments-note-text{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    text-align: left;
+}.table{
+    text-align: left;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+}.upload-btn{
+    height: 35px;
+    width: 100px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    background-color:#00E498;
+    border: none;
+    color:white;
+    margin: 5px;
+    float: right;
+}.fileuploadinput{
+    height: 35px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    float: right;
+    text-align: right;
+}
+
+.resume-border-wrapper{
+    border: dotted 4px #9DFFE1;
+    padding: 15px;
+}.my-resume-icon{
+    color:#4EB294;
+}.my-resume-text{
+    font-size: 14px;
+    padding-top: 15px;
+    color:#4EB294;
+}.resume-border{
+    justify-content: space-around;
+}
+
+
+
+/*APPLICTIONS TEXT FONTS*/
+.appform-title1{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 30px;
+    line-height: 20px;
+    color: #9A0000;
+}
+.application-title-label{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    line-height:normal;
+    margin-bottom: 20px;
+}.application-summary-label{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+}.application-sub-title{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    color: black;
+    font-weight: bold;
+}
+
+
+
+/*BUTTONS*/
+.applicantformbtn
+{
+    background-color: #5BE790;
+    border: none;
+    height: 40px;
+    width: 100%;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    color: white;
+    border-radius: 10px;
+    transition: 1s;
+
+}
+
+
+/*Applications labels*/
+.position-title{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: bolder;
+    line-height: normal;
+    color: #9A0000;
+}.appplication-label1{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    line-height: 10px;
+    color: #959595;
+}.status-label{
+    background-color: #F6EBAB;
+    color: #414141;
+    font-weight: 300;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    margin-right: 10px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 10px;
+}.updateapplicationbtn{
+    background-color: #BFBFBF;
+    border: none;
+    height: 35px;
+    width: 100PX;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    color: white;
+    transition: 0.5s;
+    float: right;
+}.updateapplicationbtn:hover{
+    background-color: #9A0000;
+    color: white;
+}
+
+
+
+
+.tab-wrapper{
+    border-bottom: solid 2px #FCFCFC;
+    width: 100%;
+}.tab-content-view{
+    padding-top: 30px;
+}.application-tab-btn{
+    background-color: transparent;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 12px;
+    color: #343434;
+    border: none;
+    width: 150px;
+    padding: 10px;
+    margin-right:10px;
+    margin-top: 10px;
+    border-bottom: solid 2px transparent;
+}.application-tab-btn:hover{
+    border-bottom: solid 3px #9A0000;
+    color:#9A0000;
+}.active-tab{
+    border-bottom: solid 3px #9A0000;
+    color:#9A0000;
+}

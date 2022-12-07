@@ -1,0 +1,66 @@
+
+
+
+.mrf-title-text{
+    font-size: 20px;
+    text-align: center;
+    padding-top: 10px;
+    font-weight: bold;
+    color: #B80000;
+}.modal-li{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    color: black;
+}
+
+.resigned-list-icon{
+    font-size: 30px;
+    text-align: center;
+    padding-top: 10px;
+    color: #B80000;
+}.title-info-p-text{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    color: black;
+}.modal-title-info-p-text{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    color: black;
+    color: #B80000;
+}
+.rsg-info-p-text{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    color: black;
+}.approved-rsg-info-p-text{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    color: #F1AAAA;
+    text-align: right;
+    padding-top: 20px;
+}.position-rsg-info-p-text{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    color: black;
+    text-align: right;
+    padding-top: 20px;
+}
+
+
+/*BUTTON*/
+.resigned-manageapplicants-btn{
+    background-color: #9A0000;
+    border: solid 1px #9A0000;
+    height: 35px;
+    border-radius: 0px;
+    margin:5px;
+    width: 200px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    color: white;
+    transition: 0.5s;
+}.resigned-manageapplicants-btn:hover{
+    background-color: #F1AAAA;
+    color: black;
+}

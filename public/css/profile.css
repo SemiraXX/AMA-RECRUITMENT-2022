@@ -1,0 +1,140 @@
+
+
+/*WRAPPERS*/
+.profilemainwrapper{
+    margin:auto;
+    width: 95%;
+    background-color: transparent;
+    padding-top: 100px;
+    padding-left: 70px;
+    padding-right: 70px;
+    padding-bottom: 50px;
+}.profile-content-wrapper{
+    background-color: white;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+    border-right: solid 4px #9A0000;
+    padding-left:30px;
+    padding-right:30px;
+    
+}.profile-top-content-wrapper{
+    padding-top: 30px;
+}.profile-sub-details-wrapper{
+    background-color: transparent;
+    border: solid 1px #D4D3D3;
+    padding: 30px;
+    margin-top: 15px;
+}.profile-sub-details-wrapper-2{
+    background-color: transparent;
+    padding: 30px;
+    margin-top: 15px;
+}.profile-cred-container{
+    border: solid 1px #D4D3D3;
+    padding:20px;
+}
+
+
+.resume-border-wrapper{
+    border: dotted 4px #9A0000;
+    padding: 15px;
+}.my-resume-icon{
+    color:#9A0000;
+}.my-resume-text{
+    font-size: 14px;
+    padding-top: 15px;
+    color:#9A0000;
+}.resume-border{
+    justify-content: space-around;
+}
+
+
+/*ICONS IMG*/
+.profile-pic{
+   font-size: 80px;
+   padding: 0%;
+   font-family: 'Montserrat', sans-serif;
+   color: #9A0000;
+   padding-top: 10px;
+}
+
+
+/*LABELS TEXT*/
+.profile-top-name{
+    font-family: 'Montserrat', sans-serif;
+    color: black;
+    font-size: 16PX;
+    font-weight: bold;
+    line-height: 10px;
+}.profile-top-sub-names{
+    font-family: 'Montserrat', sans-serif;
+    color: black;
+    font-size: 12PX;
+    font-weight: normal;
+    line-height: 10px;
+}.profile-contact-info{
+    font-family: 'Montserrat', sans-serif;
+    color: #9A0000;
+    font-size: 14PX;
+    font-weight: normal;
+    line-height: 10px;
+    text-align: right;
+}.profile-verify-info{
+    font-family: 'Montserrat', sans-serif;
+    color: #9A0000;
+    font-size: 12PX;
+    font-weight: normal;
+    line-height: 10px;
+    text-align: left;
+}th, td, tr{
+    font-family: 'Montserrat', sans-serif;
+    color: black;
+    font-size: 12PX;
+}.span-profile-files{
+    font-family: 'Montserrat', sans-serif;
+    color:#888888;
+    font-size:50PX;
+}.file-p-text{
+    margin:10px;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    font-size: 10px;
+    font-weight: bold;
+    color: black;
+    width: 100px;
+}.profile-cred-details-title{
+    font-family: 'Montserrat', sans-serif;
+    color: #9A0000;
+    font-size: 25PX;
+    font-weight: bold;
+    line-height: 10px;
+}.profile-cred-details{
+    font-family: 'Montserrat', sans-serif;
+    color: black;
+    font-size: 14PX;
+}
+
+
+/*BUTTONS*/
+.edit-profile-btn{
+    background-color: #9A0000;
+    border: none;
+    height: 30px;
+    width: 100px;
+    border-radius: 10PX;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    color: white;
+    transition: 1s;
+    float: right;
+}.resume-profile-btn{
+    background-color: #9A0000;
+    border: none;
+    height: 30px;
+    width: 100px;
+    border-radius: 10PX;
+    margin: 5px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    color: white;
+    transition: 1s;
+}

@@ -1,0 +1,68 @@
+
+
+
+/*THIS IS FOR MAIN HR DASHBOARD*/
+.hrwrapper1{
+    width:99%;
+    overflow-x: hidden;
+    background-color: transparent;
+}.bar-logo{
+    width: 70px;
+    margin-top: 40px;
+    margin-left: 70px;
+    margin-bottom: 80px;
+}.dashboard-left-side{
+    background-color: white;
+    height: 100vh;
+    position: fixed;
+    width:250px !important;
+    box-shadow: 0px 4px 17px -2px rgba(0,0,0,0.07);
+}.dashboard-right-side{
+    padding-top: 50px;
+    margin-left: 250px !important;
+    
+}
+
+.normal-info-p-text{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    color: black;
+}
+
+
+.hr-dashboard-main-content-wrapper{
+    margin: auto;
+    position: relative;
+    padding-left: 20px;
+    background-color: transparent;
+    
+}.hr-dashboard-title{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+
+
+/*SIDEBAR*/
+.buttonswrapper{
+    width:100%;
+    padding:10px;
+    margin: auto; 
+}.side-menu-btn{
+    width: 100%;
+    border-radius:20px;
+    height: 40px;
+    border: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    font-weight: bolder;
+    margin-bottom:17px;
+    padding-left: 20px;
+    background-color: transparent;
+    text-align: justify;
+    transition: 0.5s;
+}.side-menu-btn:hover{
+    background-color: #E1E1E1;
+    color: #9A0000;
+}
