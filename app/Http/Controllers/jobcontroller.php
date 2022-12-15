@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\applicants;
 use App\Models\applications;
 use App\Models\consent;
+use App\Models\jobs;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -108,103 +109,119 @@ class jobcontroller extends Controller
 
         $id = $request->input('id');
 
-        $specificjd = DB::table('JDMaster')->where('JDCode', $id)->first();
-        
-        if(($specificjd->JDDescription == null) || ($specificjd->JDDescription == " ") || (empty($specificjd->JDDescription)))
-        {
-            $JDDescription = "...";
-        }
-        else
-        {
-            $JDDescription = $specificjd->JDDescription;
-        }
+        #get JDcode according to posted job requirements
+        $jobs = jobs::where('id', $id)->first();
 
-        
-        //if($specificjd)
+        #if jobs id found
+        //if(!empty($jobs))
         //{
-            $training = DB::table('JDQualifications')->where('QlfType', 'Trng')->where('JDCode', $specificjd->JDCode)->first();
-            if($training)
-            {
-                $trainingval = $training->QlfDesc;
-            }
-            else
-            {
-                $trainingval = "...";
-            }
+            $specificjd = DB::table('JDMaster')->where('JDCode', $jobs->JDCode)->first();
+
+            #check if JDcode found in JDMaster
+            //if($specificjd)
+            //{
             
-            $Skills = DB::table('JDQualifications')->where('QlfType', 'Skills')->where('JDCode', $specificjd->JDCode)->first();
-            if($Skills)
-            {
-                $Skillsval = $Skills->QlfDesc;
-            }
-            else
-            {
-                $Skillsval = "...";
-            }
+                if(($specificjd->JDDescription == null) || ($specificjd->JDDescription == " ") || (empty($specificjd->JDDescription)))
+                {
+                    $JDDescription = "...";
+                }
+                else
+                {
+                    $JDDescription = $specificjd->JDDescription;
+                }
 
-            $duties = DB::table('JDDutiesResp')->where('JDCode', $specificjd->JDCode)->first();
-            if($duties)
-            {
-                $dutiesval = $duties->DutiesResp;
-            }
-            else
-            {
-                $dutiesval = "...";
-            }
-
-            echo '
-            <div class="insidejobtitle">
-                <div class="row">
-                <div class="col-sm-2">
-                    <img src="/assets/ama-br-logo.png" class="job-logo">
-                </div>
-                <div class="col-sm-7">
-                    <p class="main-job-title">'.$JDDescription.'</p>
-                </div>
-                <div class="col-sm-3">
-                    <div class="input-group">
-                    <form action="/applicant/apply/form" method="get">
-                    '.csrf_field().'
-                    <input type="hidden" name="id" value="'.$id.'">
-                    <button type="submit" class="apply-btn">Apply</button>
-                    </form>
-                    <a href="#"><button type="button" class="save-app-btn"><i class="fa fa-star" aria-hidden="true"></i></button></a>
-                    </div>
+                
+                    $training = DB::table('JDQualifications')->where('QlfType', 'Trng')->where('JDCode', $specificjd->JDCode)->first();
+                    if($training)
+                    {
+                        $trainingval = $training->QlfDesc;
+                    }
+                    else
+                    {
+                        $trainingval = "...";
+                    }
                     
-                </div>
-                </div>
-            </div>
+                    $Skills = DB::table('JDQualifications')->where('QlfType', 'Skills')->where('JDCode', $specificjd->JDCode)->first();
+                    if($Skills)
+                    {
+                        $Skillsval = $Skills->QlfDesc;
+                    }
+                    else
+                    {
+                        $Skillsval = "...";
+                    }
 
-            <div class="singlejobthumbnail">
+                    $duties = DB::table('JDDutiesResp')->where('JDCode', $specificjd->JDCode)->first();
+                    if($duties)
+                    {
+                        $dutiesval = $duties->DutiesResp;
+                    }
+                    else
+                    {
+                        $dutiesval = "...";
+                    }
+
+                    echo '
+                    <div class="insidejobtitle">
+                        <div class="row">
+                        <div class="col-sm-2">
+                            <img src="/assets/ama-br-logo.png" class="job-logo">
+                        </div>
+                        <div class="col-sm-7">
+                            <p class="main-job-title">'.$JDDescription.'</p>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="input-group">
+                            <form action="/applicant/apply/form" method="get">
+                            '.csrf_field().'
+                            <input type="hidden" name="id" value="'.$id.'">
+                            <button type="submit" class="apply-btn">Apply</button>
+                            </form>
+                            <a href="#"><button type="button" class="save-app-btn"><i class="fa fa-star" aria-hidden="true"></i></button></a>
+                            </div>
+                            
+                        </div>
+                        </div>
+                    </div>
+
+                    <div class="singlejobthumbnail">
+                    
+                        <p class="label-job-title">Job Details</p>
+
+                        <div class="job-details-wrapper">
+                        <p class="label-job-title1">Job Type:</p>
+                        <p class="job-label2">Full-time</p>
+                        <p class="job-label2">Permanent</p>
+                        <br>
+                        <p class="label-job-title1">Training Required:</p>
+                        <p class="job-label2">'.$trainingval.'</p>
+                        <br>
+                        <p class="label-job-title1">Skills Required:</p>
+                        <p class="job-label2">'.$Skillsval.'</p>
+                        <br>
+                        <p class="label-job-title1">Duties & Reponsibilities:</p>
+                        <p class="job-label2">'.$dutiesval.'</p>
+                        <br>
+                        <p class="label-job-title1">Full job Descriptions:</p>
+                        <p class="job-summary-label">'.$specificjd->Summary.'</p>
+                        <br>
+                        </div>
+                    <br><br><br>
+                    </div>
+                ';
             
-                <p class="label-job-title">Job Details</p>
+           // }
+           // else
+           // {
+                //return back()->with('checknotes', "Sorry, job details is not longer available.");
+            //    echo "Sorry, job details is not longer available.";
+            //}
 
-                <div class="job-details-wrapper">
-                <p class="label-job-title1">Job Type:</p>
-                <p class="job-label2">Full-time</p>
-                <p class="job-label2">Permanent</p>
-                <br>
-                <p class="label-job-title1">Training Required:</p>
-                <p class="job-label2">'.$trainingval.'</p>
-                <br>
-                <p class="label-job-title1">Skills Required:</p>
-                <p class="job-label2">'.$Skillsval.'</p>
-                <br>
-                <p class="label-job-title1">Duties & Reponsibilities:</p>
-                <p class="job-label2">'.$dutiesval.'</p>
-                <br>
-                <p class="label-job-title1">Full job Descriptions:</p>
-                <p class="job-summary-label">'.$specificjd->Summary.'</p>
-                <br>
-                </div>
-            <br><br><br>
-            </div>
-        ';
-       
         //}
         //else
         //{
-        //    echo "JDCode not exist in KP database";
+            //return back()->with('checknotes', "Sorry, we coudn't find the Job.");
+           // echo "Sorry, we coudn't find the Job.";
         //}
 
 

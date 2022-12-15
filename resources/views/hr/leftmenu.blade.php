@@ -26,10 +26,15 @@
                     <button type="button" class="side-menu-btn">
                     <i class="fa fa-file-text" aria-hidden="true"></i> &nbsp; Requests
                     </button></a>
-
+                    
                     <button type="button" class="side-menu-btn">
                     <i class="fa fa-bell" aria-hidden="true"></i> &nbsp; Notifications
                     </button>
+
+                    <a href="/HR/Resume">
+                    <button type="button" class="side-menu-btn">
+                    <i class="fa fa-file-text-o" aria-hidden="true"></i> &nbsp; Resume Bank
+                    </button></a>
 
                     <br><br><br><br><br>
 

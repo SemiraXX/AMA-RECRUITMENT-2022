@@ -6,6 +6,7 @@ use App\Models\applications;
 use App\Models\consent;
 use App\Models\adminmovement;
 use App\Models\nonacad;
+use App\Models\uploadedresume;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -118,6 +119,7 @@ class hrcontroller extends Controller
              
         return view('hr.processing',
         ['allapplications' => $allapplications]);   
+
     }
 
 
@@ -148,6 +150,7 @@ class hrcontroller extends Controller
              
         return view('hr.onboarding',
         ['allapplications' => $allapplications]);   
+
     }
 
 
@@ -161,10 +164,20 @@ class hrcontroller extends Controller
              
         return view('hr.requests',
         ['nonacad' => $nonacad]);
+
     }
 
 
 
+    //display all resume
+    public function displayallresume(Request $request) 
+    {
+        $uploadedresume = uploadedresume::orderBy('date_submitted', 'DESC')->get();
+    
+        return view('hr.resume',
+        ['uploadedresume' => $uploadedresume]);
+
+    }
 
 
 

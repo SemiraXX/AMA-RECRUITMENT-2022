@@ -79,7 +79,7 @@ if (window.location.pathname  == '/list/applications') {
      <a href="/find/jobs"><button id="btnjob" type="button" class="headermenubtn">Find Jobs</button></a>
      <a href="/list/applications"><button id="btnapplication" type="button" class="headermenubtn">Applications</button></a>
      <a href="/applicant/profile"><button id="btnprofile" type="button" class="headermenubtn">Profile</button></a>
-     <a href="#"><button id="btnprofile" type="button" class="headermenubtn">Setting</button></a>
+     <a href="#"><button id="btnprofile" type="button" class="headermenubtn">Upload Resume</button></a>
      <a href="/applicant/logout"><button id="btnprofile" type="button" class="headermenubtn">logout</button></a>
       </form>
     </div>

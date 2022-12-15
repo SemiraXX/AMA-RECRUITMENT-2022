@@ -48,7 +48,7 @@
                               <img src="/assets/ama-br-logo.png" class="job-logo">
                               <p class="job-label1">{{$job->position}}</p>
                               <p class="job-label2">{{$job->JobDescription}} ({{$job->JDCode}})</p>
-                              <button type="button" onclick="this.style.backgroundColor='#ACACAC'"  class="view-job-btn get_data" id="{{$job->JDCode}}">View</button>
+                              <button type="button" onclick="this.style.backgroundColor='#ACACAC'"  class="view-job-btn get_data" id="{{$job->id}}">View</button>
                               <br>
                               </div>
                           </div>

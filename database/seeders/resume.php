@@ -14,20 +14,41 @@ class resume extends Seeder
      */
     public function run()
     {
-        $employee = new \App\Models\resume([
-            'applicant_name' => 'Maiky1',
-            'applicant_details' => 'Sample details1',
-            'remarks'  => 'Samle remarks1'
+        $uploadedresume = new \App\Models\uploadedresume([
+            'userid' => "01043127",
+            'applicationID' => "1SDC01",
+            'file_name' => "RESUME",
+            'file_url' => "Dec-15-2022-Belmonte-Resume.pdf",
+            'tagName' => "Direct Upload",
+            'remarks' => "Posted",
+            'date_submitted' => Now()
         ]);
+        $uploadedresume -> save();
 
-        $employee -> save();
 
-        $employee = new \App\Models\resume([
-            'applicant_name' => 'Maiky2',
-            'applicant_details' => 'Sample details2',
-            'remarks'  => 'Samle remarks2'
+        $uploadedresume = new \App\Models\uploadedresume([
+            'userid' => "01043444",
+            'applicationID' => "200SDC01",
+            'file_name' => "RESUME",
+            'file_url' => "Dec-15-2022-Belmonte-Resume.pdf",
+            'tagName' => "Direct Upload",
+            'remarks' => "Posted",
+            'date_submitted' => Now()
         ]);
+        $uploadedresume -> save();
 
-        $employee -> save();
+
+        $uploadedresume = new \App\Models\uploadedresume([
+            'userid' => "01043555",
+            'applicationID' => "300SDC01",
+            'file_name' => "RESUME",
+            'file_url' => "Dec-15-2022-Belmonte-Resume.pdf",
+            'tagName' => "Direct Upload",
+            'remarks' => "Posted",
+            'date_submitted' => Now()
+        ]);
+        $uploadedresume -> save();
+
+       
     }
 }

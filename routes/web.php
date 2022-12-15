@@ -75,7 +75,7 @@ Route::post('/profile/update',[applicantprofile::class,'completeprofileform'])->
 Route::get('/Delete/Education',[applicantaccountcontroller::class,'deleteeducattainmetn'])->name('educattainment.delete');
 Route::get('/Delete/Family',[applicantaccountcontroller::class,'deletefamily'])->name('family.delete');
 Route::post('/upload/resume',[applicantaccountcontroller::class,'submitresume'])->name('submit.resume');
-
+Route::post('/upload/direct',[applicantaccountcontroller::class,'directsubmitresume'])->name('direct.resume');
 
 
 
@@ -94,6 +94,10 @@ Route::get('/HR/shortlisted',[hrcontroller::class,'displayshortlisted'])->name('
 Route::get('/HR/processing',[hrcontroller::class,'displayforprocessing'])->name('hr.processing');
 Route::get('/HR/job/posting',[jobposting::class,'displayjobsposting'])->name('hr.jobposting');
 
+
+
+//HR Resume list
+Route::get('/HR/Resume',[hrcontroller::class,'displayallresume'])->name('hr.resume');
 
 
 //HR REQUESTS FROM DEPT HEAD

@@ -244,6 +244,8 @@
                 @else
     
                 @endif
+                <a href="#" class="viewattachementsmodal" style="text-decoration:none">
+                <p class="file-p-text"><span class="span-profile-files">View All</p></a>
                 </div>
                 
               </div>
@@ -255,9 +257,6 @@
 
         </div>
 
-
-
-       
 
   </div>
 
@@ -306,6 +305,54 @@
   </div>
 </div>
 
+
+
+<!--CREDENTIAL REQUIRMENTS MODAL-->
+<div class="modal fade" id="uploadcredrequirments">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content"  style="background-color:transparent;border:none;">
+
+      <div class="modal-body">
+          <div class="document-wrapper">
+          <p class="document"><i class="fa fa-file-pdf-o" aria-hidden="true"></i></p>
+          </div>
+          <div class="all-documents-modal"  style="background-color:white">
+          <p class="document-title">My Documents</p>
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Requirements</th>
+                    <th>Date Submitted</th>
+                    <th>File</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+               
+                @foreach($allrequirements as $docu)             
+                  <tr>
+                    <th>{{$docu->file_code}}</th>
+                    <td>{{ $docu->date_submitted}}</td>
+                    <td><strong><i class="fa fa-file-o" aria-hidden="true"></i> {{ $docu->file_url}}</strong></td>
+                    <td style="text-align:center;color:#05D431"><a href="/files/requirements/{{$docu->file_url}}" target="_blank" style="text-decoration:none">View</a></td>
+                  </tr>
+                @endforeach
+                </tbody>
+              </table>
+              
+              <br>
+          </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+  $(document).on('click', '.viewattachementsmodal', function(){   
+    $('#uploadcredrequirments').modal('show');  
+  });
+</script>
 
 </body>
 </html>

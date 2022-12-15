@@ -8,6 +8,8 @@ use App\Models\status;
 use App\Models\answer;
 use App\Models\requirements;
 use App\Models\resume;
+use App\Models\uploadedresume;
+use App\Models\jobs;
 use App\Models\applicantreplies;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
@@ -48,16 +50,28 @@ class applicationscontroller extends Controller
     {
         if(session()->has('applicantsession')){
 
+
             $id = $request->input('id');
 
-            $specificjd = DB::table('JDMaster')->where('JDCode', $id)->first();
+            //create application ID
+            #get profile user ID + JDCODE
             $applicants = applicants::where('userid', '=', session('applicantsession'))->first();
+
+            //$specificjd = DB::table('JDMaster')->where('JDCode', $id)->first();
+            #get posted job details
+            $jobs = jobs::where('id', '=', $id)->first();
+            $specificjd = DB::table('JDMaster')->where('JDCode', $jobs->JDCode)->first();
+
+            #merge
+            $applicationID = $applicants->id.$jobs->JDCode;
+            
             $resume = resume::where('userid', '=', session('applicantsession'))->first();
             
             return view('applicant.applications.submitapplication',
             ['applicants' => $applicants,
             'specificjd' => $specificjd,
-            'resume' => $resume]);    
+            'resume' => $resume,
+            'applicationID' => $applicationID]);    
         }
         else
         {
@@ -103,10 +117,11 @@ class applicationscontroller extends Controller
     {
         if(session()->has('applicantsession')){
         
+            $applicationID = $request->input('applicationID');
 
             $applications = new applications([
                 'status' => "Awaiting",
-                'application_id' => rand(0, 999999).date("-Y-m-d"),
+                'application_id' => $applicationID,
                 'userid'  => $request->input('email'),
                 'date_applied' => NOW(),
                 'mrf_type' => 0,
@@ -152,6 +167,31 @@ class applicationscontroller extends Controller
                 'when_hear_about_us' => $request->input('when_hear_about_us')
             ]);
             $applications->save();
+
+
+
+            //make a copy of resume
+            #get file in resume file 
+            $getresume = resume::where('userid', '=', session('applicantsession'))->first();
+
+            #if has no resume or have
+            if($getresume)
+            {
+                $uploadedresume = new uploadedresume([
+                    'userid' => $getresume->userid,
+                    'applicationID' => $applicationID,
+                    'file_name' => $getresume->file_name,
+                    'file_url' => $getresume->file,
+                    'tagName' => "Uploaded with Application",
+                    'remarks' => "RESUME",
+                    'date_submitted' => NOW()
+                ]);
+                $uploadedresume->save();
+            }
+            else
+            {
+
+            }
 
             return redirect()->route('user.applications'); 
             
@@ -290,36 +330,6 @@ class applicationscontroller extends Controller
 
             }
             
-
-           /* DB::table('tbl_applications')
-            ->where('application_id',  $applications->application_id)
-            ->update(
-                array(
-                    'status' => "For-Criteria-Evaluation"
-                 ));
-
-
-            $status = new status([
-                'application_id' => $applications->application_id,
-                'userid' => $applications->userid,
-                'mrf_number' => $applications->mrf_number,
-                'complete_name' => $applications->lname.", ".$applications->fname,
-                'status' => "For-Criteria-Evaluation",
-                'position' => $applications->position_applying,
-                'branch' => "None",
-                'interviewer' => "Not-set",
-                'exam' => "Not-set",
-                'max_attempt' => 2,
-                'attempt' => 0,
-                'active' => 1,
-                'for_transfer' => 0,
-                'hr_userid' => 00001,
-                'message' => "...",
-                'remarks' => "New",
-                'data_modified' => NOW()   
-            ]);
-            $status->save();*/
-         
             return back()->with('notes', "Exam submitted!");
          
     }
@@ -338,7 +348,7 @@ class applicationscontroller extends Controller
            $usernamereq = $request->input('usernamereq');
            $appidreq = $request->input('appidreq');
            $name = $request->file('name');
-           
+           $applicationID = $request->input('applicationID');
 
            for ($i=0; $i<count($reqname); $i++){
 
@@ -352,7 +362,7 @@ class applicationscontroller extends Controller
                     $pdf->move(public_path('/files/requirements'), $fileName);
                     $requirements = new requirements([
                             'userid' =>  $useridreq,
-                            'application_id' =>  $appidreq,
+                            'application_id' =>  $applicationID,
                             'requirement_name' =>  $reqname[$i],
                             'file_code' => $reqcode[$i],
                             'is_posted' => 1,

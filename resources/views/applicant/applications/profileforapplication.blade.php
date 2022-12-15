@@ -12,10 +12,11 @@
             <label class="application-sub-title">Job Summary</label>
             <p class="application-summary-label">{{$specificjd->Summary}}</p>
           </div>
+          <input type="hidden" name="applicationID" value="{{$applicationID}}" readonly>
+
         </div>
   
         <div class="application-form-wrapper2">
-
                 <div class="resume-border-wrapper">
                     @if($resume)
                       <a href="#" data-target="#resume" data-toggle="modal">
@@ -76,7 +77,7 @@
             </div>
             <br>
             <div class="row applicantrowwrapper">
-              <label class="application-title-label">For Uploading of Requirements</label><br>
+              <label class="application-title-label">Requirements</label><br>
               <button type="button" class="take-exam-btn uploadcredentials">Upload Requirments</button>
             </div>
             <br>
@@ -204,15 +205,15 @@
 
             <!--PERSONAL INFO 4TH ROW-->
             <div class="row applicantrowwrapper">
-                <div class="col-sm-4">
+                <div class="col-sm-6">
                   <label class="application-sub-title">Latin Awards</label>
                   <input type="text" name="latin_awards_honors" class="appform-input"  placeholder="type here..." required>  
                 </div>
-                <div class="col-sm-4">
+                <div class="col-sm-6">
                   <label class="application-sub-title">Tesda Certification</label>
                   <input type="text" name="tesda_cerfitification" class="appform-input"  placeholder="type here..." required>  
                 </div>
-                <div class="col-sm-4">
+                <div class="col-sm-12">
                   <label class="application-sub-title">WHERE DID YOU HEAR ABOUT US?</label>
                   <input type="text" name="when_hear_about_us" class="appform-input"  placeholder="type here..." required>  
                 </div>
@@ -283,7 +284,7 @@
           <p class="document"><i class="fa fa-file-pdf-o" aria-hidden="true"></i></p>
           </div>
           <div class="requirments-instruction"  style="background-color:white">
-          <p class="requirments-note-title">Upload all requirements</p>
+          <p class="requirments-note-title">Upload all requirements here</p>
     
             <form action="{{ route('document.submit')}}" method="post" enctype="multipart/form-data">
             {{ csrf_field() }}
@@ -298,15 +299,12 @@
                 <tbody>
                 <?php $documents = DB::table('ApplicantRequirements')->where('ClassType', 'NONACAD')->get(); ?>
                 @foreach($documents as $docu)
-                    <?php  $checkrequirements = DB::table('tbl_requirements')->where('file_code', $docu->FlUploadCode)->first(); ?>
+                    <?php  $checkrequirements = DB::table('tbl_requirements')->where('application_id', $applicationID)->where('file_code', $docu->FlUploadCode)->first(); ?>
                    @if($checkrequirements)
                       <tr>
-                        <th>{{$docu->FlUploadDesc}} 
-                          <input type="hidden" name="reqname[]" value="{{$docu->FlUploadDesc}}">
-                          <input type="hidden" name="reqcode[]" value="{{$docu->FlUploadCode}}">
-                        </th>
-                        <td>submitted</td>
-                        <td>{{ $checkrequirements->file_name}}</td>
+                        <th>{{$docu->FlUploadDesc}}</th>
+                        <td style="text-align:right;">{{ $checkrequirements->file_url}}</td>
+                        <td style="text-align:center;color:#05D431"><i class="fa fa-check" aria-hidden="true"></i> Done</td>
                       </tr>
                     @else
                     <tr>
@@ -314,18 +312,19 @@
                           <input type="hidden" name="reqname[]" value="{{$docu->FlUploadDesc}}">
                           <input type="hidden" name="reqcode[]" value="{{$docu->FlUploadCode}}">
                         </th>
-                        <td><input type="file"  name="name[]" style="width:300px"></td>
-                        <td>none</td>
+                        <td style="text-align:right;"><input type="file"  name="name[]" style="width:300px"></td>
+                        <td style="text-align:center;color:#EA2D1E"><i class="fa fa-times" aria-hidden="true"></i> None</td>
                       </tr>
                     @endif
                 @endforeach
                 </tbody>
               </table>
               
-              <p class="requirments-note-text">*Upload your complete credetials in pdf format. You can merge mutilple document in one pdf file.</p>
+              <p class="requirments-note-text">*Upload your file in pdf format. You can merge mutilple document in one pdf file.</p>
               <input type="hidden" name="usernamereq" value="{{$applicants->lname}}">
               <input type="hidden" name="useridreq" value="{{$applicants->userid}}">
               <input type="hidden" name="appidreq" value="12345567">
+              <input type="hidden" name="applicationID" value="{{$applicationID}}" readonly>
               <button type="submit" class="upload-btn">Upload <i class="fa fa-upload" aria-hidden="true"></i></button>
               <br>
             </form>

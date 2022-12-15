@@ -9,6 +9,7 @@ use App\Models\family;
 use App\Models\employment;
 use App\Models\requirements;
 use App\Models\resume;
+use App\Models\uploadedresume;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -35,7 +36,8 @@ class applicantaccountcontroller extends Controller
             $families = family::where('userid', '=', session('applicantsession'))->get();
             $employment = employment::where('userid', '=', session('applicantsession'))->get();
 
-            $requirements = requirements::where('userid', '=', session('applicantsession'))->get();
+            $requirements = requirements::where('userid', '=', session('applicantsession'))->Limit(4)->get();
+            $allrequirements = requirements::where('userid', '=', session('applicantsession'))->get();
             $resume = resume::where('userid', '=', session('applicantsession'))->first();
             
             return view('applicant..profile.profile',
@@ -47,7 +49,8 @@ class applicantaccountcontroller extends Controller
             'families' => $families,
             'employment' => $employment,
             'requirements' => $requirements,
-            'resume' => $resume]);    
+            'resume' => $resume,
+            'allrequirements' => $allrequirements]);    
         }
         else
         {
@@ -186,6 +189,32 @@ class applicantaccountcontroller extends Controller
         {
             return redirect()->route('signup'); 
         }
+    }
+
+
+
+    //SUBMIT RESUME FILE
+    public function directsubmitresume(Request $request) 
+    {
+     
+        $pdf = $request->file('name'); 
+        $fileName = date("dMYHis").'-'.'RESUME'.'.'. $pdf->extension();  
+        $pdf->move(public_path('/files/resume'), $fileName);
+            
+        $uploadedresume = new uploadedresume([
+            'userid' => "Default",
+            'applicationID' => 0,
+            'file_name' => "RESUME THRU DIRECT UPLOAD",
+            'file_url' => $fileName,
+            'tagName' => "Direct upload to resume",
+            'remarks' => "None",
+            'date_submitted' => NOW()
+        ]);
+        $uploadedresume->save();
+
+        
+        return back()->with('notes', "Resume posted");
+       
     }
 
 
